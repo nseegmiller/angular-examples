@@ -12,7 +12,7 @@ function sleep(time) {
 }
 
 app.get('/authenticate', function (request, response) {
-    sleep(1000);
+    sleep(request.query.delay * 1000);
     response.json(
         {
             'name': 'Nick',
@@ -26,7 +26,7 @@ app.get('/authenticate', function (request, response) {
 });
 
 app.get('/systems', function (request, response) {
-    sleep(1000);
+    sleep(request.query.delay * 1000);
     response.json(
         {
             'system_id': 1,
@@ -36,7 +36,7 @@ app.get('/systems', function (request, response) {
 });
 
 app.get('/devices', function (request, response) {
-    sleep(1000);
+    sleep(request.query.delay * 1000);
     response.json(
         {
             'device': [
@@ -60,4 +60,4 @@ app.get('/devices', function (request, response) {
     );
 });
 
-app.listen(8080); //to port on which the express server listen
+app.listen(8888); //to port on which the express server listen
