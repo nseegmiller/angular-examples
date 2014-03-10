@@ -12,6 +12,7 @@ function sleep(time) {
 }
 
 app.get('/authenticate', function (request, response) {
+    response.header("Access-Control-Allow-Origin", "*");
     sleep(request.query.delay * 1000);
     response.json(
         {
@@ -26,20 +27,35 @@ app.get('/authenticate', function (request, response) {
 });
 
 app.get('/systems', function (request, response) {
+    response.header("Access-Control-Allow-Origin", "*");
     sleep(request.query.delay * 1000);
     response.json(
         {
-            'system_id': 1,
-            'name': 'My house'
+            'systems': [
+                {
+                    'system_id': 1,
+                    'name': 'My house'
+                },
+                {
+                    'system_id': 2,
+                    'name': 'Lake house'
+                },
+                {
+                    'system_id': 3,
+                    'name': 'Cabin'
+                }
+            ]
+
         }
     );
 });
 
 app.get('/devices', function (request, response) {
+    response.header("Access-Control-Allow-Origin", "*");
     sleep(request.query.delay * 1000);
     response.json(
         {
-            'device': [
+            'devices': [
                 {
                     'id': 1,
                     'system_id': 1,

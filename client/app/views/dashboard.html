@@ -1,0 +1,11 @@
+<div>Welcome to the app {{Authenticate.name}}!</div>
+<div>You have access to the following systems:</div>
+<ul>
+    <li ng-repeat="system in Authenticate.systems">
+        <ul>
+            <li>ID: {{system.system_id}}</li>
+
+            <li>Name: {{System.systems[system.system_id].name}}</li>
+        </ul>
+    </li>
+</ul>

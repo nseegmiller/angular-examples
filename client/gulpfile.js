@@ -58,15 +58,9 @@ gulp.task('images-deploy', function() {
 //compiling our Javascripts
 gulp.task('scripts', function() {
     //this is where our dev JS scripts are
-    return gulp.src('app/scripts/src/**/*.js')
-                //this is the filename of the compressed version of our JS
-               .pipe(concat('app.js'))
+    return gulp.src('app/scripts/**/*.js')
                //catch errors
                .on('error', gutil.log)
-               //compress :D
-               .pipe(uglify())
-               //where we will store our finalized, compressed script
-               .pipe(gulp.dest('app/scripts'))
                //notify LiveReload to refresh
                .pipe(refresh(server));
 });
@@ -74,9 +68,9 @@ gulp.task('scripts', function() {
 //compiling our Javascripts for deployment
 gulp.task('scripts-deploy', function() {
     //this is where our dev JS scripts are
-    return gulp.src('app/scripts/src/**/*.js')
+    return gulp.src('app/scripts/**/*.js')
                 //this is the filename of the compressed version of our JS
-               .pipe(concat('app.js'))
+               .pipe(concat('scripts.js'))
                //compress :D
                .pipe(uglify())
                //where we will store our finalized, compressed script
@@ -95,10 +89,6 @@ gulp.task('styles', function() {
                }))
                //catch errors
                .on('error', gutil.log)
-               //the final filename of our combined css file
-               .pipe(concat('styles.css'))
-               //where to save our final, compressed css file
-               .pipe(gulp.dest('app/styles'))
                //notify LiveReload to refresh
                .pipe(refresh(server));
 });
@@ -123,7 +113,7 @@ gulp.task('styles-deploy', function() {
 //basically just keeping an eye on all HTML files
 gulp.task('html', function() {
     //watch any and all HTML files and refresh when something changes
-    return gulp.src('app/*.html')
+    return gulp.src('app/**/*.html')
         .pipe(refresh(server))
        //catch errors
        .on('error', gutil.log);
@@ -163,8 +153,9 @@ gulp.task('clean', function() {
 //  compress all scripts and SCSS files
 gulp.task('default', ['webserver', 'livereload', 'scripts', 'styles'], function() {
     //a list of watchers, so it will watch all of the following files waiting for changes
-    gulp.watch('app/scripts/src/**', ['scripts']);
-    gulp.watch('app/styles/scss/**', ['styles']);
+    gulp.watch('app/scripts/**', ['scripts']);
+    gulp.watch('app/styles/**', ['styles']);
+    gulp.watch('app/views/**', ['html']);
     gulp.watch('app/*.html', ['html']);
 });
 
