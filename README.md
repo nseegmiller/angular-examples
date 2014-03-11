@@ -4,6 +4,10 @@ This assumes you have Node already installed. Lots of resources for installing N
 
 First, clone this repository.
 
+Optionally install the live reload extension for Chrome
+
+https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
+
 Install gulp (used for the client code)
 
     npm install -g gulp
@@ -27,6 +31,8 @@ In a separate terminal, in the RoutesAndPromies/client directory, run the follow
 Then, start serving the app:
 
     gulp
+  
+Finally, visit http://localhost:3000 in your web browser
   
 # References
 * http://docs.angularjs.org/api/ngResource/service/$resource
