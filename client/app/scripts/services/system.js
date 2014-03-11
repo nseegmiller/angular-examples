@@ -1,16 +1,17 @@
-angular.module('routesAndPromises').factory('System', ['$resource',
-    function($resource) {
+angular.module('routesAndPromises').factory('System', ['$resource', 'APIDelay',
+    function($resource, APIDelay) {
         return {
             systems: {},
+            systemsFetched: false,
             getSystems: function() {
                 var self = this;
                 self.systems = {};
-                return $resource('http://localhost:8888/systems').get({delay: 2}).$promise.then(
+                $resource('http://localhost:8888/systems').get({delay: APIDelay},
                     function(response) {
                         angular.forEach(response.systems, function(system) {
                             self.systems[system.system_id] = {'name': system.name};
                         });
-                        return response;
+                        self.systemsFetched = true;
                     }
                 );
             }

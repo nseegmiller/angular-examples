@@ -1,20 +1,12 @@
 angular.module('routesAndPromises', ['ngRoute', 'ngResource'])
+    .constant('APIDelay', 0)
     .config(function($routeProvider) {
         $routeProvider
-            .when('/', {
-                controller: 'LoggedOutCtrl',
-                templateUrl: 'views/login.html'
-            })
             .when('/dashboard', {
-                controller: 'LoggedInCtrl',
-                templateUrl: 'views/dashboard.html',
-                resolve: {
-                    data: ['Authenticate', function(Authenticate) {
-                        return Authenticate.login();
-                    }]
-                }
+                controller: 'DashboardCtrl',
+                templateUrl: 'views/dashboard.html'
             })
             .otherwise({
-                redirectTo:'/'
+                redirectTo:'/dashboard'
             });
-    })
+    });
