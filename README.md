@@ -16,19 +16,19 @@ Install express (used for the server code)
 
     npm install -g express
 
-In the RoutesAndPromies/server directory, run the following to setup the REST server (first time only):
+In the RoutesAndPromies/server directory, run the following to setup the REST server (first time only)
 
     npm install
   
-Then, start the REST server:
+Then, start the REST server
 
     node rest_api.js
   
-In a separate terminal, in the RoutesAndPromies/client directory, run the following to setup the Angular app:
+In a separate terminal, in the RoutesAndPromies/client directory, run the following to setup the Angular app
 
     npm install
   
-Then, start serving the app:
+Then, start serving the app
 
     gulp
   
