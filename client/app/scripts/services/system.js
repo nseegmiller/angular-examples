@@ -6,7 +6,7 @@ angular.module('routesAndPromises').factory('System', ['$resource', 'APIDelay',
             getSystems: function() {
                 var self = this;
                 self.systems = {};
-                $resource('http://localhost:8888/systems').get({delay: APIDelay},
+                $resource('/api/systems').get({delay: APIDelay},
                     function(response) {
                         angular.forEach(response.systems, function(system) {
                             self.systems[system.system_id] = {'name': system.name};

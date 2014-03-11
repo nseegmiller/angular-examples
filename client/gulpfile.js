@@ -1,5 +1,5 @@
 //initialize all of our variables
-var app, base, concat, connect, directory, gulp, gutil, hostname, http, lr, open, path, refresh, sass, server, uglify, imagemin, cache, minifyCSS, clean;
+var app, base, concat, connect, directory, gulp, gutil, hostname, http, httpProxy, lr, open, path, refresh, sass, server, uglify, imagemin, cache, minifyCSS, clean;
 
 //load all of our dependencies
 //add more here if you want to include more libraries
@@ -12,6 +12,7 @@ refresh     = require('gulp-livereload');
 open        = require('gulp-open');
 connect     = require('connect');
 http        = require('http');
+httpProxy   = require('http-proxy');
 path        = require('path');
 lr          = require('tiny-lr');
 imagemin    = require('gulp-imagemin');
@@ -25,7 +26,7 @@ server = lr();
 //this starts the webserver so we can run localhost:3000 and sync with the LiveReload plugin
 gulp.task('webserver', function() {
     //the port to run our local webserver on
-    var port = 3000;
+    var port = 8889;
     hostname = null;
     //the directory to our working environment
     base = path.resolve('app');
@@ -33,6 +34,20 @@ gulp.task('webserver', function() {
     //start up the server
     app = connect().use(connect["static"](base)).use(connect.directory(directory));
     http.createServer(app).listen(port, hostname);
+});
+
+gulp.task('api-proxy', function() {
+    var proxy = httpProxy.createServer({});
+    var server = http.createServer(function(req, res) {
+        if (req.url.indexOf('/api') === 0) {
+            req.url = req.url.substr(4);
+            proxy.web(req, res, {target: 'http://localhost:8888'});
+        }
+        else {
+            proxy.web(req, res, {target: 'http://localhost:8889'});
+        }
+    });
+    server.listen(3000);
 });
 
 //connecting to the live reload plugin, basically notifies the browser to refresh when we want it to
@@ -153,7 +168,7 @@ gulp.task('clean', function() {
 //  startup the web server,
 //  start up livereload
 //  compress all scripts and SCSS files
-gulp.task('default', ['webserver', 'livereload', 'scripts', 'styles'], function() {
+gulp.task('default', ['webserver', 'api-proxy', 'livereload', 'scripts', 'styles'], function() {
     //a list of watchers, so it will watch all of the following files waiting for changes
     gulp.watch('app/scripts/**', ['scripts']);
     gulp.watch('app/styles/**', ['styles']);

@@ -6,7 +6,7 @@ angular.module('routesAndPromises').factory('Devices', ['$resource', 'APIDelay',
             getDevices: function() {
                 var self = this;
                 self.devices = {};
-                $resource('http://localhost:8888/devices').get({delay: APIDelay},
+                $resource('/api/devices').get({delay: APIDelay},
                     function(response) {
                         angular.forEach(response.devices, function(device) {
                             if (self.devices[device.system_id] === undefined)  {

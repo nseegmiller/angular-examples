@@ -12,7 +12,6 @@ function sleep(time) {
 }
 
 app.get('/authenticate', function (request, response) {
-    response.header("Access-Control-Allow-Origin", "*");
     sleep(request.query.delay * 1000);
     response.json(
         {
@@ -27,7 +26,6 @@ app.get('/authenticate', function (request, response) {
 });
 
 app.get('/systems', function (request, response) {
-    response.header("Access-Control-Allow-Origin", "*");
     sleep(request.query.delay * 1000);
     response.json(
         {
@@ -51,7 +49,6 @@ app.get('/systems', function (request, response) {
 });
 
 app.get('/devices', function (request, response) {
-    response.header("Access-Control-Allow-Origin", "*");
     sleep(request.query.delay * 1000);
     response.json(
         {
