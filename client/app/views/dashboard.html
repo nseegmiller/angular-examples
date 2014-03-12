@@ -8,7 +8,8 @@
     </div>
     <div class="column right">
         <div class="container">
-            <h1>Welcome {{Authenticate.name}}!</h1>
+            <h1>{{greeting}} {{Authenticate.name}}!</h1>
+            <h2>{{status}}</h2>
             <ul class="devices">
                 <li ng-repeat="device in Devices.devices[activeHome]">
                     {{device.name}}

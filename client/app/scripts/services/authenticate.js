@@ -1,16 +1,15 @@
-angular.module('routesAndPromises').factory('Authenticate', ['$resource', 'System', 'APIDelay',
-    function($resource, System, APIDelay) {
+angular.module('routesAndPromises').factory('Authenticate', ['$resource', 'System', 'APIDelay', '$q',
+    function($resource, System, APIDelay, $q) {
         return {
             name: '',
             systems: [],
-            loginCompleted: false,
             login: function() {
                 var self = this;
-                $resource('/api/authenticate').get({delay: APIDelay},
+                return $resource('/api/authenticate').get({delay: APIDelay}).$promise.then(
                     function(response) {
                         self.name = response.name;
                         self.systems = response.systems;
-                        self.loginCompleted = true;
+                        return response;
                     }
                 );
             }
