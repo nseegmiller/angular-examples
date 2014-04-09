@@ -1,20 +1,12 @@
 <div class="full-height">
-    <div class="column left">
-        <ul class="items">
-            <li ng-repeat="system in Authenticate.systems" ng-class="{'active': system.system_id === activeHome}">
-                {{System.systems[system.system_id].name}}
-            </li>
-        </ul>
-    </div>
     <div class="column right">
-        <div class="container">
-            <h1>{{greeting}} {{Authenticate.name}}!</h1>
-            <h2>{{status}}</h2>
-            <ul class="devices">
-                <li ng-repeat="device in Devices.devices[activeHome]">
-                    {{device.name}}
-                </li>
-            </ul>
+        <div class="container" ng-controller="DashboardCtrl">
+            <h2>Shared: {{sharedProperty}}</h2>
+            <h2>Extended: {{extendedProperty}}</h2>
+        </div>
+        <div class="container" ng-controller="DashboardExtendedCtrl">
+            <h2>Shared: {{sharedProperty}}</h2>
+            <h2>Extended: {{extendedProperty}}</h2>
         </div>
     </div>
 
