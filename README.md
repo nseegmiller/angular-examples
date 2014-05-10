@@ -1,5 +1,18 @@
-RoutesAndPromises
-=================
+angular-examples
+================
+The various branches of this repository demonstrate various AngularJS principles, many of which have been presented at a meetup or conference.
+
+Routes and promises
+* Video: https://www.youtube.com/watch?v=oCzWIlGDICk
+* Branch: RoutesAndPromises
+* Info: Demonstrates how to use promises in your Angular routes
+
+Controller inheritence
+* Branch: Controller inheritence
+* Info: Demostrates a very simple way to use inheritence in your angular controllers
+
+Setup to run the examples
+=========================
 This assumes you have Node already installed. Lots of resources for installing Node if you don't.
 
 First, clone this repository.
