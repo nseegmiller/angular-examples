@@ -2,13 +2,18 @@ angular-examples
 ================
 The various branches of this repository demonstrate various AngularJS principles, many of which have been presented at a meetup or conference.
 
+ngAnimate with CSS and GreenSock
+* Video: TBA (AngularJS Utah meetup May 2014)
+* Branch: ng-animate
+* Info: Refresher on using ngAnimate with CSS as well as how to use it with GreenSock (GSAP)
+
 Routes and promises
-* Video: https://www.youtube.com/watch?v=oCzWIlGDICk
-* Branch: RoutesAndPromises
+* Video: https://www.youtube.com/watch?v=oCzWIlGDICk (AngularJS Utah meetup Mar 2014)
+* Branch: routes-and-promises
 * Info: Demonstrates how to use promises in your Angular routes
 
-Controller inheritence
-* Branch: Controller inheritence
+Controller inheritance
+* Branch: controller-inheritance
 * Info: Demostrates a very simple way to use inheritence in your angular controllers
 
 Setup to run the examples
@@ -29,7 +34,7 @@ Install express (used for the server code)
 
     npm install -g express
 
-In the RoutesAndPromies/server directory, run the following to setup the REST server (first time only)
+In the angular-examples/server directory, run the following to setup the REST server (first time only)
 
     npm install
   
@@ -37,7 +42,7 @@ Then, start the REST server
 
     node rest_api.js
   
-In a separate terminal, in the RoutesAndPromies/client directory, run the following to setup the Angular app
+In a separate terminal, in the angular-examples/client directory, run the following to setup the Angular app
 
     npm install
   
