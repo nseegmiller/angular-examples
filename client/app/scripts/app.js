@@ -1,4 +1,5 @@
-angular.module('angular-examples', ['ngRoute', 'ngAnimate'])
+angular.module('angular-examples', ['angular-examples.animations', 'ngRoute', 'ngAnimate'])
+    .constant('TweenMax', TweenMax)
     .config(function($routeProvider) {
         $routeProvider
             .when('/dashboard', {
@@ -12,3 +13,5 @@ angular.module('angular-examples', ['ngRoute', 'ngAnimate'])
                 redirectTo:'/dashboard'
             });
     });
+
+angular.module('angular-examples.animations', []);
