@@ -16,6 +16,7 @@
     "gulp": "~3.5.5",
     "gulp-imagemin": "~0.1.5",
     "gulp-sass": "~0.7.1",
+    "gulp-compass": "~1.1.9",
     "gulp-open": "~0.2.8",
     "connect": "~2.14.1",
     "http-proxy": "~1.0.2"

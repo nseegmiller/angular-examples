@@ -7,6 +7,7 @@ gulp        = require('gulp');
 gutil       = require('gulp-util');
 concat      = require('gulp-concat');
 uglify      = require('gulp-uglify');
+compass     = require('gulp-compass');
 sass        = require('gulp-sass');
 refresh     = require('gulp-livereload');
 open        = require('gulp-open');
@@ -36,19 +37,19 @@ gulp.task('webserver', function() {
     http.createServer(app).listen(port, hostname);
 });
 
-gulp.task('api-proxy', function() {
-    var proxy = httpProxy.createServer({});
-    var server = http.createServer(function(req, res) {
-        if (req.url.indexOf('/api') === 0) {
-            req.url = req.url.substr(4);
-            proxy.web(req, res, {target: 'http://localhost:8888'});
-        }
-        else {
-            proxy.web(req, res, {target: 'http://localhost:8889'});
-        }
-    });
-    server.listen(3000);
-});
+//gulp.task('api-proxy', function() {
+//    var proxy = httpProxy.createServer({});
+//    var server = http.createServer(function(req, res) {
+//        if (req.url.indexOf('/api') === 0) {
+//            req.url = req.url.substr(4);
+//            proxy.web(req, res, {target: 'http://localhost:8888'});
+//        }
+//        else {
+//            proxy.web(req, res, {target: 'http://localhost:8889'});
+//        }
+//    });
+//    server.listen(3000);
+//});
 
 //connecting to the live reload plugin, basically notifies the browser to refresh when we want it to
 gulp.task('livereload', function() {
@@ -95,12 +96,12 @@ gulp.task('scripts-deploy', function() {
 //compiling our SCSS files
 gulp.task('styles', function() {
     //the initializer / master SCSS file, which will just be a file that imports everything
-    return gulp.src('app/styles/scss/init.scss')
+    return gulp.src('app/styles/scss/*.scss')
         //include SCSS and list every "include" folder
-        .pipe(sass({
-            includePaths: [
-                'app/styles/scss/'
-            ]
+        .pipe(compass({
+            css: 'app/styles',
+            sass: 'app/styles/scss',
+            image: 'app/img'
         }))
         .pipe(concat('main.css'))
         //catch errors
@@ -168,7 +169,7 @@ gulp.task('clean', function() {
 //  startup the web server,
 //  start up livereload
 //  compress all scripts and SCSS files
-gulp.task('default', ['webserver', 'api-proxy', 'livereload', 'scripts', 'styles'], function() {
+gulp.task('default', ['webserver', 'livereload', 'scripts', 'styles'], function() {
     //a list of watchers, so it will watch all of the following files waiting for changes
     gulp.watch('app/scripts/**', ['scripts']);
     gulp.watch('app/styles/**', ['styles']);

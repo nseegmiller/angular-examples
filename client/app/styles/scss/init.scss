@@ -1,3 +1,6 @@
+@import "compass/css3";
+@import "animations";
+
 $vivint-orange: #FF8200;
 
 * {
@@ -38,6 +41,10 @@ div.header {
   display: inline-block;
 }
 
+li {
+  cursor: pointer;
+}
+
 .left {
   position: absolute;
   top: 0;
@@ -63,6 +70,10 @@ div.header {
   }
 }
 
+.pink {
+//  background: pink;
+}
+
 .items {
   li {
     padding: 0 20px;
@@ -86,5 +97,18 @@ div.header {
     font-size: 20px;
     display: inline-block;
     margin-right: 5px;
+  }
+}
+
+.example-block {
+  position: relative;
+  img {
+    height: 200px;
+  }
+  h1 {
+    margin: 0;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
   }
 }

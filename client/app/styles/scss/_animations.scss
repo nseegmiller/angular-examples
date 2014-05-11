@@ -1,0 +1,57 @@
+// Fade in and out done with pure CSS transitions
+.fade-in-out.ng-enter, .fade-in-out.ng-leave {
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+.fade-in-out.ng-enter {
+  opacity: 0;
+}
+.fade-in-out.ng-leave {
+  opacity: 1;
+}
+.fade-in-out.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.fade-in-out.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+
+// Opacity fade - same as above, but done with Compass/SCSS
+$transition-time: .5s;
+.opacity-fade {
+  &.ng-enter {
+    opacity: 0;
+    @include transition(opacity $transition-time);
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
+  &.ng-leave {
+    opacity: 1;
+    @include transition(opacity $transition-time);
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+// Fade in-out for ng-show done with Compass/SCSS
+.fade-show {
+  @include transition(opacity $transition-time);
+  &.ng-hide-remove {
+    opacity: 0;
+    display: block !important;
+    &.ng-hide-remove-active {
+      opacity: 1;
+    }
+  }
+  &.ng-hide-add {
+    opacity: 1;
+    display: block !important;
+    &.ng-hide-add-active {
+      opacity: 0;
+    }
+  }
+}
+
