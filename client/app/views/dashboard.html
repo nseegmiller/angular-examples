@@ -4,6 +4,10 @@
             <li ng-click="toggleVariable('ngif')">ng-if</li>
             <li ng-click="toggleVariable('nginclude')">ng-include</li>
             <li ng-click="toggleVariable('ngshow')">ng-show</li>
+            <li ng-click="toggleVariable('keyframes')">keyframes</li>
+            <li ng-click="$location.path('/other-page')">change views</li>
+            <li ng-click="toggleVariable('multipart')">multipart</li>
+            <li ng-click="toggleVariable('lotsofprops')">lots of props</li>
         </ul>
     </div>
     <div class="column right">
@@ -15,12 +19,30 @@
             </div>
 
             <!-- ng-include -->
-            <div ng-include="nginclude" class="slide-and-fade-right"></div>
+            <div ng-include="nginclude" class="fade-in-out"></div>
 
             <!-- ng-show -->
             <div ng-show="ngshow" class="example-block fade-show">
                 <img src="img/plainDoge.jpg">
                 <h1>ng-show</h1>
+            </div>
+
+            <!-- keyframes -->
+            <div ng-if="keyframes" class="example-block keyframe-fade">
+                <img src="img/plainDoge.jpg">
+                <h1>keyframes</h1>
+            </div>
+
+            <!-- multi-part animation -->
+            <div ng-if="multipart" class="example-block multipart-animation">
+                <img src="img/plainDoge.jpg">
+                <h1>multipart</h1>
+            </div>
+
+            <!-- animate lots of properties -->
+            <div ng-if="lotsofprops" class="example-block lots-of-props">
+                <img src="img/plainDoge.jpg">
+                <h1>lots of properties</h1>
             </div>
         </div>
     </div>

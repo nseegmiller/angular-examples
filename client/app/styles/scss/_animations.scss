@@ -55,3 +55,52 @@ $transition-time: .5s;
   }
 }
 
+// Fade in-out done with keyframe animations (and Compass/SCSS)
+/* A super simple fade-in */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* A super simple fade-out */
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.keyframe-fade {
+  &.ng-enter {
+    -webkit-animation: $transition-time fade-in;
+    animation: $transition-time fade-in;
+  }
+  &.ng-leave {
+    -webkit-animation: $transition-time fade-out;
+    animation: $transition-time fade-out;
+  }
+}
+

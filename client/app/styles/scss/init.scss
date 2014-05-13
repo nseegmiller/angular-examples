@@ -23,8 +23,13 @@ html, body {
   overflow: hidden;
 }
 
+button {
+  display: block;
+}
+
 .full-height {
   height: 100%;
+  position: relative;
 }
 
 div.header {
@@ -50,7 +55,6 @@ li {
   top: 0;
   z-index: 1;
   width: 250px;
-  padding-top: 52px;
   height: 100%;
   background-color: #eee;
   border-right: 1px solid #ddd;
@@ -62,7 +66,6 @@ li {
   height: 100%;
   left: 0;
   top: 0;
-  padding-top: 52px;
   padding-left: 250px;
   z-index: 0;
   .container {
@@ -102,6 +105,7 @@ li {
 
 .example-block {
   position: relative;
+  display: inline-block;
   img {
     height: 200px;
   }

@@ -7,6 +7,7 @@ angular.module('angular-examples', ['angular-examples.animations', 'ngRoute', 'n
                 templateUrl: 'views/dashboard.html'
             })
             .when('/other-page', {
+                controller: 'DashboardCtrl',
                 templateUrl: 'views/other-page.html'
             })
             .otherwise({

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angular-examples.animations')
-    .animation('.fade-in-out', ['TweenMax',
+    .animation('.fade-in-out-js', ['TweenMax',
         function(TweenMax) {
             var fadeTime = 0.3;
             return {

@@ -1,5 +1,5 @@
-angular.module('angular-examples').controller('DashboardCtrl', ['$scope',
-    function($scope) {
+angular.module('angular-examples').controller('DashboardCtrl', ['$scope', '$location',
+    function($scope, $location) {
         $scope.ngif = false;
         $scope.toggleVariable = function(variable) {
             if (variable === 'nginclude') {
@@ -14,5 +14,7 @@ angular.module('angular-examples').controller('DashboardCtrl', ['$scope',
                 $scope[variable] = !$scope[variable];
             }
         };
+
+        $scope.$location = $location;
     }
 ]);
