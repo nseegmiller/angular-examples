@@ -3,7 +3,7 @@ angular-examples
 The various branches of this repository demonstrate various AngularJS principles, many of which have been presented at a meetup or conference.
 
 ngAnimate with CSS and GreenSock
-* Video: TBA (AngularJS Utah meetup May 2014)
+* Video: https://www.youtube.com/watch?v=rXeKZzJYuKI&t=32m20s (AngularJS Utah meetup May 2014)
 * Branch: ng-animate
 * Info: Refresher on using ngAnimate with CSS as well as how to use it with GreenSock (GSAP)
 
