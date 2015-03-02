@@ -2,6 +2,17 @@ angular-examples
 ================
 The various branches of this repository demonstrate various AngularJS principles, many of which have been presented at a meetup or conference.
 
+Animating Angular - ng-conf 2015 Hacknight
+* Video: coming soon
+* Branch: animating-angular
+* Slides: http://slides.com/nickseegmiller/animating-angular
+* Info: When asked about the best thing of Angular, many people are quick to point to
+    its fantastic two-way binding feature. With ngAnimate, it is exceptionally easy
+    to add a little spice to that great feature. I will show everyone how simple it is
+    to get up and running with ngAnimate, demonstrate some of my favorite tips and tricks,
+    and delve into some advanced strategies for combining CSS and JS animations using
+    the GreenSock Animation Platform (GSAP).
+
 ngAnimate with CSS and GreenSock
 * Video: https://www.youtube.com/watch?v=rXeKZzJYuKI&t=32m20s (AngularJS Utah meetup May 2014)
 * Branch: ng-animate
