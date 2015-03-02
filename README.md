@@ -2,8 +2,8 @@ angular-examples
 ================
 The various branches of this repository demonstrate various AngularJS principles, many of which have been presented at a meetup or conference.
 
-Animating Angular - ng-conf 2015 Hacknight
-* Video: coming soon
+Animating Angular
+* Video: coming soon (ng-conf 2015 hacknight in March 2015)
 * Branch: animating-angular
 * Slides: http://slides.com/nickseegmiller/animating-angular
 * Info: When asked about the best thing of Angular, many people are quick to point to
