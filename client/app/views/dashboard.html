@@ -1,13 +1,7 @@
 <div class="full-height">
     <div class="column left">
         <ul class="items">
-            <li ng-click="toggleVariable('ngif')">ng-if</li>
-            <li ng-click="toggleVariable('nginclude')">ng-include</li>
-            <li ng-click="toggleVariable('ngshow')">ng-show</li>
-            <li ng-click="toggleVariable('keyframes')">keyframes</li>
-            <li ng-click="$location.path('/other-page')">change views</li>
-            <li ng-click="toggleVariable('multipart')">multipart</li>
-            <li ng-click="toggleVariable('lotsofprops')">lots of props</li>
+            <li ng-click="item.action()" ng-repeat="item in list | orderBy:'sort':sortDir.reverse" class="repeat-anim">{{item.label}}</li>
         </ul>
     </div>
     <div class="column right">
@@ -21,16 +15,16 @@
             <!-- ng-include -->
             <div ng-include="nginclude" class="fade-in-out"></div>
 
+            <!-- keyframes -->
+            <div ng-if="keyframes" class="example-block keyframe-fade-in-out">
+                <img src="img/plainDoge.jpg">
+                <h1>keyframes</h1>
+            </div>
+
             <!-- ng-show -->
             <div ng-show="ngshow" class="example-block fade-show">
                 <img src="img/plainDoge.jpg">
                 <h1>ng-show</h1>
-            </div>
-
-            <!-- keyframes -->
-            <div ng-if="keyframes" class="example-block keyframe-fade">
-                <img src="img/plainDoge.jpg">
-                <h1>keyframes</h1>
             </div>
 
             <!-- multi-part animation -->

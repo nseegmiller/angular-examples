@@ -40,6 +40,7 @@ div.header {
   font-weight: bold;
   z-index: 2;
   position: relative;
+  @include transition(background-color $transition-time);
 }
 
 .column {
@@ -115,4 +116,8 @@ li {
     bottom: 5px;
     left: 5px;
   }
+}
+
+.compliment {
+  background-color: #803d5c !important;
 }

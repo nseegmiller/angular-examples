@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-<div class="header">angular-examples</div>
-<div class="full-height no-overflow opacity-fade" ng-view></div>
+    <div class="header" ng-class="{'compliment': compliment}">animating-angular</div>
+    <div class="full-height no-overflow {{transitionClass}}" ng-view></div>
 
-<script src="scripts/vendor/TweenMax.js"></script>
-<script src="scripts/app.js"></script>
+    <script src="scripts/vendor/TweenMax.js"></script>
+    <script src="scripts/app.js"></script>
 
-<script src="scripts/animations/fade-in.js"></script>
-<script src="scripts/animations/multipart.js"></script>
-<script src="scripts/animations/slide-and-fade.js"></script>
+    <script src="scripts/animations/fade-in.js"></script>
+    <script src="scripts/animations/multipart.js"></script>
+    <script src="scripts/animations/slide-and-fade.js"></script>
 
-<script src="scripts/controllers/dashboard.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
 
-</body>
+    </body>
 </html>

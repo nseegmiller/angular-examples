@@ -3,19 +3,22 @@
   -webkit-transition: 0.5s linear all;
   transition: 0.5s linear all;
 }
+
 .fade-in-out.ng-enter {
   opacity: 0;
 }
+
 .fade-in-out.ng-leave {
   opacity: 1;
 }
+
 .fade-in-out.ng-enter.ng-enter-active {
   opacity: 1;
 }
+
 .fade-in-out.ng-leave.ng-leave-active {
   opacity: 0;
 }
-
 
 // Opacity fade - same as above, but done with Compass/SCSS
 $transition-time: .5s;
@@ -29,6 +32,26 @@ $transition-time: .5s;
   }
   &.ng-leave {
     opacity: 1;
+    @include transition(opacity $transition-time);
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+// Opacity fade - with position absolute for ngView
+.opacity-fade-with-absolute {
+  &.ng-enter {
+    opacity: 0;
+    position: absolute;
+    @include transition(opacity $transition-time);
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
+  &.ng-leave {
+    opacity: 1;
+    position: absolute;
     @include transition(opacity $transition-time);
     &.ng-leave-active {
       opacity: 0;
@@ -61,6 +84,9 @@ $transition-time: .5s;
   0% {
     opacity: 0;
   }
+  90% {
+    opacity: .5;
+  }
   100% {
     opacity: 1;
   }
@@ -69,6 +95,9 @@ $transition-time: .5s;
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
+  }
+  90% {
+    opacity: .5;
   }
   100% {
     opacity: 1;
@@ -80,20 +109,27 @@ $transition-time: .5s;
   0% {
     opacity: 1;
   }
-  100% {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes fade-out {
-  0% {
-    opacity: 1;
+  90% {
+    opacity: .5;
   }
   100% {
     opacity: 0;
   }
 }
 
-.keyframe-fade {
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.keyframe-fade-in-out {
   &.ng-enter {
     -webkit-animation: $transition-time fade-in;
     animation: $transition-time fade-in;
@@ -103,4 +139,3 @@ $transition-time: .5s;
     animation: $transition-time fade-out;
   }
 }
-
