@@ -38,6 +38,18 @@
                 <img src="img/plainDoge.jpg">
                 <h1>lots of properties</h1>
             </div>
+
+            <!-- mix css & js -->
+            <div ng-if="mixed" class="example-block mixed">
+                <img src="img/plainDoge.jpg">
+                <h1>mixed</h1>
+            </div>
+
+            <!-- pick css or js based on support -->
+            <div ng-if="pickBest" class="example-block" ng-class="{'fade-in-out': hasTransitions, 'fade-in-out-js': !hasTransitions}">
+                <img src="img/plainDoge.jpg">
+                <h1>pick the best</h1>
+            </div>
         </div>
     </div>
 

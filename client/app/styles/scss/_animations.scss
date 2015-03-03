@@ -139,3 +139,37 @@ $transition-time: .5s;
     animation: $transition-time fade-out;
   }
 }
+
+.mixed {
+  &.ng-enter {
+    opacity: 0;
+    @include transition(opacity $transition-time);
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
+  &.ng-leave {
+    opacity: 1;
+    @include transition(opacity $transition-time);
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}
+
+.mixed {
+  &.ng-enter {
+    opacity: 0;
+    @include transition(opacity $transition-time);
+    &.ng-enter-active {
+      opacity: 1;
+    }
+  }
+  &.ng-leave {
+    opacity: 1;
+    @include transition(opacity $transition-time);
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}

@@ -1,5 +1,7 @@
 angular.module('angular-examples').controller('DashboardCtrl', ['$scope', '$location', '$rootScope',
     function ($scope, $location, $rootScope) {
+        $scope.hasTransitions = Modernizr.csstransitions;
+
         // Object to avoid shadowing/scoping issues
         $scope.sortDir = {
             reverse: false
@@ -14,7 +16,9 @@ angular.module('angular-examples').controller('DashboardCtrl', ['$scope', '$loca
             {action: function() { toggleRootVariable('compliment') }, label: 'ng-class', sort: 6},
             {action: function() { toggleVariable('ngshow') }, label: 'ng-show', sort: 7},
             {action: function() { toggleVariable('multipart') }, label: 'multipart', sort: 9},
-            {action: function() { toggleVariable('lotsofprops') }, label: 'lots of props', sort: 10}
+            {action: function() { toggleVariable('lotsofprops') }, label: 'lots of props', sort: 10},
+            {action: function() { toggleVariable('mixed') }, label: 'mixed js/css', sort: 11},
+            {action: function() { toggleVariable('pickBest') }, label: 'pick the best', sort: 12}
         ];
 
         $scope.ngif = false;
