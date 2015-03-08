@@ -65,6 +65,7 @@ Finally, visit http://localhost:3000 in your web browser
   
 # References
 ngAnimate
+* http://slides.yearofmoo.com/ng-conf-2015/index.html?now123#/0/0/
 * https://docs.angularjs.org/api/ngAnimate
 * http://www.yearofmoo.com/2013/08/remastered-animation-in-angularjs-1-2.html
 * http://www.greensock.com/get-started-js/
