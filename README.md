@@ -1,3 +1,7 @@
+NOTE
+================
+This repository is quite old and based on verions of Angular that are no longer current. It is available but legacy reasons but should not be considered accurate or up to date.
+
 angular-examples
 ================
 The various branches of this repository demonstrate various AngularJS principles, many of which have been presented at a meetup or conference.
